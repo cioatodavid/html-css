@@ -16,21 +16,24 @@
             <img src="https://logodownload.org/wp-content/uploads/2014/09/google-logo-4.png" alt="google logo">
              <div class="search active">
              <div class="icon">
+                <button class="searchb"></button>
                 <i class="fab fa-google"></i>
             </div>
              <div class="input">
-                    <input type="text" placeholder="Search" id="mysearch">
-                        <!-- <span class="clear" onclick="document.getElementById('mysearch').value = '' "></span> -->
+                    <input type="text" placeholder="Search" class="query" value="">
+                       
   </div>
 </div>
 </section>
 </div>
 <script>
-/* const icon = document.querySelector('.icon');
-const search = document.querySelector('.search');
-icon.onclick = function(){
-   search.classList.toggle ('active')
-} */
+let query = document.querySelector('.query');
+let searchb = document.querySelector('.searchb');
+
+searchb.onclick = function(){
+    let url = 'https://www.google.com.br/search?q=' + query.value;
+    window.open(url, '_self')
+}
 </script>
 
 </body>
