@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+
+    <title>MOODLE</title>
+</head>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        
+        <div class="header_toggle"> 
+            <i class="ri-menu-line" id="header-toggle"></i>
+           
+         </div>
+         
+        <div class="panel_toggle">
+            <div class="profile" onclick="toggle();"> <img
+                    src="https://ead.upf.br/pluginfile.php/533503/user/icon/moove/f1?rev=6369694"  alt="profile image">
+                   
+            </div>
+            <div class="menu">
+                <h3>David Cioato<br><br><span>Análise e desenvolvimento de sistemas</span></h3>
+                <ul>
+                    <li> <i class="ri ri-dashboard-line"></i> <a href="#">Painel</a> </li>
+                    <li> <i class="ri ri-user-line"></i> <a href="#">Perfil</a> </li>
+                    <li> <i class="ri ri-settings-3-line"></i> <a href="#">Configurações</a> </li>
+                    <li> <i class="ri ri-logout-box-line"></i> <a href="#">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <div class="nav_list"> <a href="#" class="nav_link active"> <i class="ri ri-function-line"></i>
+                        <span class="nav_name">Página inicial</span> </a> </a> <a href="#" class="nav_link"> <i
+                            class="ri ri-question-answer-line"></i> <span class="nav_name">Mensagens</span> </a> <a href="#"
+                        class="nav_link"> <i class="ri ri-file-3-fill"></i> <span class="nav_name">Meu curso</span> </a> <a
+                        href="#" class="nav_link"> <i class="ri ri-folder-user-line"></i> <span class="nav_name">Arquivos
+                            privados</span>
+                    </a>
+                    <a href="#" class="nav_link"> <i class="ri ri-todo-line"></i> <span class="nav_name">Minhas
+                            atividades</span>
+                    </a>
+                </div>
+            </div> <a href="#" class="nav_link"> <i class="ri ri-user-voice-line"></i><span
+                    class="nav_name">Acessibilidade</span> </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div id="maindiv" class="height-100">
+        <div class="logo"><img src="https://secure.upf.br/html/img/upf50.png" alt="logo upf"></div>
+    </div>
+    <script>
+        function toggle() {
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('visible')
+        } 
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId),
+                    bodypd = document.getElementById(bodyId),
+                    headerpd = document.getElementById(headerId)
+
+
+                if (toggle && nav && bodypd && headerpd) {
+                    toggle.addEventListener('click', () => {
+
+                        nav.classList.toggle('show')
+
+                        toggle.classList.toggle('ri-close-line')
+
+                        bodypd.classList.toggle('body-pd')
+
+                        headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
+
+            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+
+            const linkColor = document.querySelectorAll('.nav_link')
+
+            function colorLink() {
+                if (linkColor) {
+                    linkColor.forEach(l => l.classList.remove('active'))
+                    this.classList.add('active')
+                }
+            }
+            linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+
+        });
+    </script>
+
+</html>
