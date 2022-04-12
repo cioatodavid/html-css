@@ -1,0 +1,17 @@
+*:root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    
+    
+}
+.main {
+    /* center using flexbox */
+   
+    background-color: black;
+    
+    width: 90vh;
+    height: 90vh;
+}
